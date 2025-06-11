@@ -12,6 +12,29 @@ document.addEventListener('DOMContentLoaded', function() {
         cursorChar: '|'
     });
     
+    // Menu Mobile Toggle
+    const menuToggle = document.querySelector('.menu-toggle');
+    const mainNav = document.querySelector('.main-nav');
+    
+    if (menuToggle) {
+        menuToggle.addEventListener('click', function() {
+            mainNav.classList.toggle('active');
+            document.body.classList.toggle('menu-open');
+        });
+    }
+    
+    // Fechar menu ao clicar em um link
+    const navLinks = document.querySelectorAll('.main-nav a');
+    
+    navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            if (window.innerWidth <= 768) {
+                mainNav.classList.remove('active');
+                document.body.classList.remove('menu-open');
+            }
+        });
+    });
+    
     // Função para animar contagem de números
     function animateNumbers() {
         const statNumbers = document.querySelectorAll('.stat-number');

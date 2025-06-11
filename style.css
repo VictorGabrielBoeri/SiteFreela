@@ -637,6 +637,24 @@ footer {
     }
 }
 
+/* Menu Mobile e Responsividade */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: #333;
+    transition: all 0.3s ease;
+}
+
 /* Responsividade */
 @media (max-width: 992px) {
     .about-content {
@@ -651,25 +669,68 @@ footer {
         width: 50%;
         margin-bottom: 30px;
     }
+    
+    .services-grid,
+    .process-steps,
+    .portfolio-grid,
+    .blog-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .contact-container {
+        flex-direction: column;
+    }
+    
+    .contact-form-container,
+    .contact-info-container {
+        width: 100%;
+    }
 }
 
 @media (max-width: 768px) {
-    .main-header {
-        flex-direction: column;
-        padding: 20px;
+    body {
+        padding-top: 60px;
     }
     
-    .logo {
-        margin-bottom: 20px;
+    .main-header {
+        padding: 15px 20px;
+    }
+    
+    .menu-toggle {
+        display: flex;
+    }
+    
+    .main-nav {
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: white;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+    }
+    
+    .main-nav.active {
+        max-height: 400px;
     }
     
     .main-nav ul {
-        flex-wrap: wrap;
-        justify-content: center;
+        flex-direction: column;
+        gap: 0;
+        padding: 20px 0;
     }
     
     .main-nav ul li {
-        margin: 5px 10px;
+        margin: 0;
+        width: 100%;
+        text-align: center;
+    }
+    
+    .main-nav ul li a {
+        display: block;
+        padding: 12px 0;
     }
     
     .circle {
@@ -677,17 +738,54 @@ footer {
         height: 250px;
     }
     
+    .about-content {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .about-image,
+    .about-text {
+        flex: none;
+        width: 100%;
+        text-align: center;
+    }
+    
+    .about-image img {
+        width: 80%;
+    }
+    
     .services-grid,
+    .process-steps,
+    .portfolio-grid,
+    .blog-grid,
     .testimonial-grid {
         grid-template-columns: 1fr;
+    }
+    
+    .stats .container {
+        flex-wrap: wrap;
+    }
+    
+    .stat-item {
+        width: 50%;
+        margin-bottom: 30px;
+    }
+    
+    .whatsapp-button a span {
+        display: none;
+    }
+    
+    .whatsapp-button a {
+        padding: 12px;
+        border-radius: 50%;
+    }
+    
+    .whatsapp-button a i {
+        margin-right: 0;
     }
 }
 
 @media (max-width: 576px) {
-    .stat-item {
-        width: 100%;
-    }
-    
     .circle {
         width: 200px;
         height: 200px;
@@ -699,6 +797,31 @@ footer {
     
     .profession {
         font-size: 12px;
+    }
+    
+    .since {
+        font-size: 10px;
+    }
+    
+    .about-text h2,
+    .services h2,
+    .process h2,
+    .portfolio h2,
+    .blog h2,
+    .contact-section h2 {
+        font-size: 28px;
+    }
+    
+    .stat-item {
+        width: 100%;
+    }
+    
+    .portfolio-filter {
+        flex-wrap: wrap;
+    }
+    
+    .filter-btn {
+        margin-bottom: 10px;
     }
 }
 
