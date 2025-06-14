@@ -1,3 +1,4 @@
+
 document.addEventListener('DOMContentLoaded', function() {
     // Menu Toggle para dispositivos móveis
     const menuToggle = document.querySelector('.menu-toggle');
